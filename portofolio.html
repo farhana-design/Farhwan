@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-line {
+  background-color: white;
+  height: 3px;
+  width: 25px;
+  margin: 5px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 50px 50px;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  max-width: 100%;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.portofolio-section, .contact-section {
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .home-section {
+    flex-direction: column;
+    padding: 70px 20px 20px;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <div class="burger-menu" id="burger-menu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Content Section -->
+  <section id="home" class="home-section">
+    <div class="container">
+      <div class="left">
+        <h1>Nama Anda</h1>
+      </div>
+      <div class="right">
+        <img src="IMG-20240726-WA0035.jpg" alt="Foto Profil" class="profile-photo">
+      </div>
+    </div>
+  </section>
+
+  <section id="portofolio" class="portofolio-section">
+    <h2>Portofolio</h2>
+    <p>Deskripsi portofolio Anda di sini...</p>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Kontak</h2>
+    <p>Hubungi saya di email@example.com</p>
+  </section>
+
+  <script>
+   const burgerMenu = document.getElementById('burger-menu');
+const navLinks = document.getElementById('nav-links');
+
+burgerMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+  </script>
+</body>
+</html>
